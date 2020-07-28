@@ -103,25 +103,24 @@ class SinglePost extends Component {
           }}
         />
 
-        {like ? (
-          <h5 onClick={this.likeToggle}>
-            <i
-              className="fa fa-thumbs-up text-success bg-dark"
-              style={{ padding: "10px", borderRadius: "50%" }}
-            />{" "}
-            {likes} Like
-          </h5>
-        ) : (
-          <h5 onClick={this.likeToggle}>
-            <i
-              className="fa fa-thumbs-up text-warning bg-dark"
-              style={{ padding: "10px", borderRadius: "50%" }}
-            />{" "}
-            {likes} Like
-          </h5>
-        )}
-
         <p className="card-text">{post.body}</p>
+        {like ? (
+          <button class="btn btn-primary" onClick={this.likeToggle}>
+            <i
+              className="fa fa-thumbs-up text-success"
+              style={{ padding: "5px", borderRadius: "50%", fontSize: "18px" }}
+            />{" "}
+            {likes} Like
+          </button>
+        ) : (
+          <button class="btn btn-primary" onClick={this.likeToggle}>
+            <i
+              className="fa fa-thumbs-up text-warning"
+              style={{ padding: "5px", borderRadius: "50%", fontSize: "18px" }}
+            />{" "}
+            {likes} Like
+          </button>
+        )}
         <br />
         <p className="font-italic mark">
           Posted by <Link to={`${posterId}`}>{posterName} </Link>

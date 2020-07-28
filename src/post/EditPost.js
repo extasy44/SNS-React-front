@@ -9,6 +9,7 @@ class EditPost extends Component {
     super();
     this.state = {
       id: "",
+      postId: "",
       title: "",
       body: "",
       redirectToProfile: false,
@@ -27,6 +28,7 @@ class EditPost extends Component {
           id: data.postedBy._id,
           title: data.title,
           body: data.body,
+          postId,
           error: "",
         });
       }
@@ -149,7 +151,9 @@ class EditPost extends Component {
         <img
           style={{ height: "200px", width: "auto" }}
           className="img-thumbnail"
-          src={`${process.env.REACT_APP_API_URL}/post/photo/${id}?${new Date().getTime()}`}
+          src={`${process.env.REACT_APP_API_URL}/post/photo/${
+            this.state.postId
+          }?${new Date().getTime()}`}
           onError={(i) => (i.target.src = `${DefaultPost}`)}
           alt={title}
         />

@@ -98,8 +98,9 @@ class Comment extends Component {
         </div>
 
         <div className="col-md-12">
-          <h4 className="text-primary">{comments.length} Comments</h4>
+          <h5 className="text-primary">{comments.length} Comment(s)</h5>
           <hr />
+          {console.log(comments)}
           {comments.map((comment, i) => (
             <div key={i}>
               <div>
@@ -130,6 +131,7 @@ class Comment extends Component {
                             <span
                               onClick={() => this.deleteConfirmed(comment)}
                               className="text-danger float-right mr-1"
+                              style={{ cursor: "pointer " }}
                             >
                               Remove
                             </span>

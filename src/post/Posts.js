@@ -80,7 +80,7 @@ class Posts extends Component {
     const { posts, page } = this.state;
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">{!posts.length ? "No more posts!" : "Recent Posts"}</h2>
+        <h2 className="mt-5 mb-5">{!posts.length ? "No more posts!" : "All Posts"}</h2>
 
         {this.renderPosts(posts)}
 
